@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LADY HOUSE - Accès</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode.js/1.5.3/qrcode.min.js"></script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+.container-access {
+    background: white;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header-title {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 0.95em;
+    color: #999;
+    margin-bottom: 40px;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+}
+
+#qrcode canvas {
+    display: block;
+}
+
+.qr-text {
+    font-size: 0.9em;
+    color: #999;
+    margin-top: 20px;
+}
+
+.button-skip {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button-skip:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.icon-qr {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .container-access {
+        padding: 40px 25px;
+    }
+    
+    .header-title {
+        font-size: 2em;
+    }
+    
+    .button-skip {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-access">
+    <div class="icon-qr">📱</div>
+    <h1 class="header-title">LADY HOUSE</h1>
+    <p class="subtitle">Bienvenue - Scannez le code QR</p>
+    
+    <div id="qrcode"></div>
+    
+    <p class="qr-text">Scannez ce code avec votre téléphone pour accéder aux services</p>
+    
+    <button class="button-skip" onclick="location.href='principale.html'">
+        Continuer sans scanner →
+    </button>
+</div>
+
+<script>
+    // Générer un QR code qui redirige vers la page principale
+    const qrtext = window.location.origin + window.location.pathname.replace('qr_access.html', 'principale.html');
+    
+    const qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: qrtext,
+        width: 250,
+        height: 250,
+        colorDark: "#667eea",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
+    });
+</script>
+
+</body>
+</html>

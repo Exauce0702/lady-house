@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LADY HOUSE - Services</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+}
+
+.logo {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.language-switch {
+    margin-top: 15px;
+}
+
+.language-switch button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.language-switch button:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.section h3 {
+    color: #764ba2;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    flex: 1;
+}
+
+.price {
+    font-weight: bold;
+    color: #667eea;
+    font-size: 1.1em;
+    margin-left: 20px;
+}
+
+.whatsapp {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.whatsapp a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.whatsapp a:hover {
+    background: #1fa357;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #667eea;
+    color: #fff;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .price {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1 id="title">LADY HOUSE</h1>
+    <p id="subtitle">Pédicure • Manucure • Pose Perruque</p>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('fr')">FR</button>
+        <button onclick="setLanguage('en')">EN</button>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="section">
+        <h2 id="pedicureTitle">Pédicure & Manucure</h2>
+
+        <h3 id="semiPermanentTitle">Pose Semi-Permanent</h3>
+        <div class="item"><span class="item-name" id="p1">une pose capsule simple</span><span class="price">4000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p2">Une pose capsule+déco</span><span class="price">5000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p3">Double capsule simple</span><span class="price">5000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p4">Double capsule+déco</span><span class="price">7000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p5">Vernis permanent sur ongles</span><span class="price">2000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p6">Vernis permanent + déco</span><span class="price">3000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p7">Pose capsule au pied</span><span class="price">2500 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p8">Nettoyage main+top</span><span class="price">1000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p9">Nettoyage pied+top</span><span class="price">1000 FCFA</span></div>
+
+        <h3 id="resinTitle">Pose Résine</h3>
+        <div class="item"><span class="item-name" id="p10">une pose résine petite</span><span class="price">8000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p11">Une pose résine longue</span><span class="price">12000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p12">Gainage main petite</span><span class="price">8000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p13">Gainage main longue</span><span class="price">10000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p14">Gainage pied</span><span class="price">7000 FCFA</span></div>
+
+        <h3 id="pedicureManTitle">Pédicure Homme & Femme</h3>
+        <div class="item"><span class="item-name" id="p15">Pédicure femme simple</span><span class="price">5000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p16">Pédicure homme simple</span><span class="price">7000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p17">Pédicure femme+Ongles</span><span class="price">7000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p18">Pédicure + Manucure femme</span><span class="price">10000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p19">Pédicure homme+Top</span><span class="price">8000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="p20">Pédicure manicure homme</span><span class="price">12000 FCFA</span></div>
+
+    </div>
+
+    <div class="section">
+        <h2 id="hairTitle">Pose Perruque & Coiffure</h2>
+
+        <div class="item"><span class="item-name" id="c1">Pose ancienne frontale</span><span class="price">6000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="c2">Pose nouvelle frontale</span><span class="price">7000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="c3">Pose closure</span><span class="price">4000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="c4">Pose Américaine</span><span class="price">15000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="c5">Pose Lagos hairlaine</span><span class="price">15000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="c6">Chignon frontale</span><span class="price">8000 FCFA</span></div>
+        <div class="item"><span class="item-name" id="c7">Chignon</span><span class="price">10000 FCFA</span></div>
+    </div>
+
+    <div class="section">
+        <h2 id="contactTitle">Contact WhatsApp</h2>
+        <div class="whatsapp">
+            <a href="https://wa.me/229150357515" target="_blank">📱 +229 01 50 35 75 15</a>
+            <a href="https://wa.me/229166841498" target="_blank">📱 +229 01 66 84 14 98</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 id="locationTitle">Localisation</h2>
+        <p id="locationText">
+            La boutique est située juste après l'échangeur barrière, en face de la station JNP, en allant vers Vodjè.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <p id="footerText">Merci de votre visite ! À bientôt chez LADY HOUSE 💅</p>
+</footer>
+
+<script>
+function setLanguage(lang) {
+    const translations = {
+        fr: {
+            title: "LADY HOUSE",
+            subtitle: "Pédicure • Manucure • Pose Perruque",
+            pedicureTitle: "Pédicure & Manucure",
+            semiPermanentTitle: "Pose Semi-Permanent",
+            resinTitle: "Pose Résine",
+            pedicureManTitle: "Pédicure Homme & Femme",
+            hairTitle: "Pose Perruque & Coiffure",
+            contactTitle: "Contact WhatsApp",
+            locationTitle: "Localisation",
+            locationText: "La boutique est située juste après l'échangeur barrière, en face de la station JNP, en allant vers Vodjè.",
+            footerText: "Merci de votre visite ! À bientôt chez LADY HOUSE 💅"
+        },
+        en: {
+            title: "LADY HOUSE",
+            subtitle: "Pedicure • Manicure • Wig Installation",
+            pedicureTitle: "Pedicure & Manicure",
+            semiPermanentTitle: "Semi-Permanent Application",
+            resinTitle: "Resin Application",
+            pedicureManTitle: "Pedicure Men & Women",
+            hairTitle: "Wig Installation & Hairstyle",
+            contactTitle: "WhatsApp Contact",
+            locationTitle: "Location",
+            locationText: "The shop is located just after the Barrière interchange, opposite the JNP station, heading towards Vodjè.",
+            footerText: "Thank you for visiting! See you soon at LADY HOUSE 💅"
+        }
+    };
+
+    const t = translations[lang];
+    document.getElementById("title").textContent = t.title;
+    document.getElementById("subtitle").textContent = t.subtitle;
+    document.getElementById("pedicureTitle").textContent = t.pedicureTitle;
+    document.getElementById("semiPermanentTitle").textContent = t.semiPermanentTitle;
+    document.getElementById("resinTitle").textContent = t.resinTitle;
+    document.getElementById("pedicureManTitle").textContent = t.pedicureManTitle;
+    document.getElementById("hairTitle").textContent = t.hairTitle;
+    document.getElementById("contactTitle").textContent = t.contactTitle;
+    document.getElementById("locationTitle").textContent = t.locationTitle;
+    document.getElementById("locationText").textContent = t.locationText;
+    document.getElementById("footerText").textContent = t.footerText;
+}
+
+// Charger la langue par défaut
+setLanguage('fr');
+</script>
+
+</body>
+</html>
